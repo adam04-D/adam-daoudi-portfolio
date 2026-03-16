@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adam Daoudi - Portfolio</title>
+    <meta name="description" content="Adam Daoudi - Data Science Engineering Student" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: 'var(--bg-primary)',
+              secondary: 'var(--bg-secondary)',
+              'text-main': 'var(--text-primary)',
+              'text-muted': 'var(--text-secondary)',
+              border: 'var(--border-color)',
+              'btn-bg': 'var(--btn-bg)',
+              'btn-text': 'var(--btn-text)',
+              'btn-hover': 'var(--btn-hover)',
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+      
+      :root {
+        --bg-primary: #F5F2EB;
+        --bg-secondary: #E8E4D9;
+        --text-primary: #2C2A26;
+        --text-secondary: #5C5A56;
+        --border-color: rgba(44, 42, 38, 0.1);
+        --btn-bg: #2C2A26;
+        --btn-text: #F5F2EB;
+        --btn-hover: #4A4843;
+      }
+
+      .dark {
+        --bg-primary: #0F0F0F;
+        --bg-secondary: #1A1A1A;
+        --text-primary: #F3F3F3;
+        --text-secondary: #A1A1AA;
+        --border-color: rgba(255, 255, 255, 0.1);
+        --btn-bg: #FFFFFF;
+        --btn-text: #000000;
+        --btn-hover: #E5E5E5;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 80px;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.29.0",
+    "react/": "https://esm.sh/react@^19.2.0/",
+    "react": "https://esm.sh/react@^19.2.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
