@@ -1,32 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { SKILL_CATEGORIES, CERTIFICATIONS } from '../constants';
 
 const Skills: React.FC = () => {
-  const skillCategories = [
-    {
-      title: 'AI & Machine Learning',
-      skills: ['Deep Learning', 'Computer Vision', 'NLP', 'Generative AI', 'LLMs', 'RAG']
-    },
-    {
-      title: 'Frameworks',
-      skills: ['PyTorch', 'TensorFlow', 'Pandas', 'Scikit-learn', 'NumPy']
-    },
-    {
-      title: 'Programming',
-      skills: ['Python', 'C', 'Java', 'JavaScript']
-    },
-    {
-      title: 'Tools',
-      skills: ['Git', 'GitHub', 'SQL', 'n8n']
-    }
-  ];
-
-  const certifications = [
-    { title: 'Fundamentals of Deep Learning', issuer: 'NVIDIA' },
-    { title: 'Deep Learning in Python', issuer: 'DataCamp' },
-    { title: 'Advanced Deep Learning with Keras', issuer: 'DataCamp' }
-  ];
-
   return (
     <section id="skills" className="py-24 px-6 md:px-12 bg-primary transition-colors duration-300">
       <div className="max-w-7xl mx-auto">
@@ -49,7 +25,7 @@ const Skills: React.FC = () => {
           >
             <h3 className="text-sm font-medium tracking-widest text-text-muted uppercase mb-8 border-b border-border pb-4">Technical Skills</h3>
             <div className="space-y-8">
-              {skillCategories.map((cat, idx) => (
+              {SKILL_CATEGORIES.map((cat, idx) => (
                 <div key={idx}>
                   <h4 className="text-lg font-serif font-medium text-text-main mb-3">{cat.title}</h4>
                   <p className="text-text-muted leading-relaxed">
@@ -68,7 +44,7 @@ const Skills: React.FC = () => {
           >
             <h3 className="text-sm font-medium tracking-widest text-text-muted uppercase mb-8 border-b border-border pb-4">Certifications</h3>
             <div className="space-y-8">
-              {certifications.map((cert, idx) => (
+              {CERTIFICATIONS.map((cert, idx) => (
                 <div key={idx}>
                   <h4 className="text-lg font-serif font-medium text-text-main mb-1">{cert.title}</h4>
                   <p className="text-text-muted text-sm">{cert.issuer}</p>

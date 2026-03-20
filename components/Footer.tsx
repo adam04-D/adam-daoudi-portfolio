@@ -1,4 +1,5 @@
 import React from 'react';
+import { BRAND_NAME, SOCIAL_LINKS, EMAIL } from '../constants';
 
 const Footer: React.FC = () => {
   return (
@@ -9,13 +10,14 @@ const Footer: React.FC = () => {
         </div>
         
         <div className="flex space-x-8 text-sm opacity-80">
-          <a href="#" className="hover:opacity-100 transition-opacity">LinkedIn</a>
-          <a href="#" className="hover:opacity-100 transition-opacity">GitHub</a>
-          <a href="mailto:adamdaoudi04@gmail.com" className="hover:opacity-100 transition-opacity">Email</a>
+          <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">LinkedIn</a>
+          <a href={SOCIAL_LINKS.github} target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">GitHub</a>
+          <a href={SOCIAL_LINKS.sardia} target="_blank" rel="noopener noreferrer" className="hover:opacity-100 transition-opacity">Literature</a>
+          <a href={`mailto:${EMAIL}`} className="hover:opacity-100 transition-opacity">Email</a>
         </div>
         
         <div className="text-sm opacity-60">
-          &copy; {new Date().getFullYear()} Adam Daoudi. All rights reserved.
+          &copy; {new Date().getFullYear()} {BRAND_NAME}. All rights reserved.
         </div>
       </div>
     </footer>

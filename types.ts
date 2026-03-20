@@ -5,17 +5,44 @@
 
 import React from 'react';
 
-export interface Product {
+export interface Project {
   id: string;
-  name: string;
-  tagline: string;
+  title: string;
+  date: string;
+  desc: string;
+  image?: string;
+  video?: string;
+  tags: string[];
+  link?: string;
+  github?: string;
+}
+
+export interface ExperienceItem {
+  id: string;
+  role: string;
+  company: string;
+  location: string;
+  period: string;
+  description: string[];
+  tags: string[];
+}
+
+export interface EducationItem {
+  id: string;
+  school: string;
+  degree: string;
+  period: string;
   description: string;
-  longDescription?: string;
-  price: number;
-  category: 'Audio' | 'Wearable' | 'Mobile' | 'Home';
-  imageUrl: string;
-  gallery?: string[];
-  features: string[];
+}
+
+export interface SkillCategory {
+  title: string;
+  skills: string[];
+}
+
+export interface Certification {
+  title: string;
+  issuer: string;
 }
 
 export interface JournalArticle {
@@ -24,7 +51,7 @@ export interface JournalArticle {
   date: string;
   excerpt: string;
   image: string;
-  content: React.ReactNode; // Allowing JSX for rich formatting/poems
+  content: React.ReactNode; 
 }
 
 export interface ChatMessage {
@@ -39,9 +66,3 @@ export enum LoadingState {
   ERROR = 'ERROR',
   SUCCESS = 'SUCCESS'
 }
-
-export type ViewState = 
-  | { type: 'home' }
-  | { type: 'product', product: Product }
-  | { type: 'journal', article: JournalArticle }
-  | { type: 'checkout' };

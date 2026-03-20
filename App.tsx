@@ -11,17 +11,13 @@ import About from './components/About';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import Features from './components/Features';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    }
-    return false;
-  });
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -72,6 +68,7 @@ function App() {
         <Hero />
         <About />
         <Projects />
+        <Features />
         <Experience />
         <Education />
         <Skills />

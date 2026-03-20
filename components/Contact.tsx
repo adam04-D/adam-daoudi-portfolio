@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { EMAIL } from '../constants';
 
 const Contact: React.FC = () => {
   return (
@@ -17,8 +18,8 @@ const Contact: React.FC = () => {
           I'm currently seeking internship opportunities in Deep Learning and Data Science. If you have an exciting project, I'd love to hear from you.
         </p>
         
-        <a href="mailto:adamdaoudi04@gmail.com" className="inline-block bg-btn-bg text-btn-text px-10 py-5 text-sm font-medium tracking-wide hover:bg-btn-hover transition-colors">
-          adamdaoudi04@gmail.com
+        <a href={`mailto:${EMAIL}`} className="inline-block bg-btn-bg text-btn-text px-10 py-5 text-sm font-medium tracking-wide hover:bg-btn-hover transition-colors">
+          {EMAIL}
         </a>
       </motion.div>
     </section>
