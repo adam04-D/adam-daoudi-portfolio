@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
     title: 'Sardia.me',
     date: '2025',
     desc: 'A personal literary archive and platform for creative writing, poetry, and philosophical essays.',
-    image: './media/sardia_img.png',
+    image: '/sardia_img.png',
     tags: ['Literature', 'Creative Writing', 'Philosophy', 'Web Design'],
     link: 'https://sardia.me/'
   }
@@ -74,7 +74,7 @@ export const EXPERIENCES: ExperienceItem[] = [
       'Managed high-level stakeholder relations and secured strategic partnerships to scale the event\'s footprint.'
     ],
     tags: ['Leadership', 'Sponsorship', 'Event Management', 'Public Relations'],
-    image: './media/goc4.jpg'
+    image: '/goc4.jpg'
   },
   {
     id: 'pda-intern',
@@ -89,7 +89,7 @@ export const EXPERIENCES: ExperienceItem[] = [
       'Designed interactive data visualizations and dashboards for stakeholder presentations.'
     ],
     tags: ['Python', 'Machine Learning', 'QGIS', 'Pandas', 'Scikit-Learn'],
-    image: './media/stage.jpeg'
+    image: '/stage.jpeg'
   }
 ];
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Github, Linkedin, Mail, Book } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BRAND_NAME, ROLE, EMAIL, SOCIAL_LINKS } from '../constants';
-import adamImg from '../media/adam.png';
+const adamImg = '/adam.png';
 
 const Hero: React.FC = () => {
   return (

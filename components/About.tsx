@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import adamImg from '../media/adam.png';
+const adamImg = '/adam.png';
 import { ABOUT_ME } from '../constants';
 
 const About: React.FC = () => {
