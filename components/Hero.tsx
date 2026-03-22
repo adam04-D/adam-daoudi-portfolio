@@ -2,7 +2,7 @@ import React from 'react';
 import { Github, Linkedin, Mail, Book } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { BRAND_NAME, ROLE, EMAIL, SOCIAL_LINKS } from '../constants';
-const adamImg = '/adam.png';
+const adamImg = '/adam.webp';
 
 const Hero: React.FC = () => {
   return (
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
         className="md:w-1/2 mt-16 md:mt-0 relative"
       >
         <div className="aspect-[4/5] md:aspect-square bg-secondary rounded-t-full overflow-hidden relative border border-border flex flex-col items-center justify-end text-text-muted">
-          <img src={adamImg} alt={`${BRAND_NAME} Portrait`} className="w-[105%] h-[105%] object-contain object-bottom -mb-8 mt-auto" />
+          <img src={adamImg} alt={`${BRAND_NAME} Portrait`} className="w-[105%] h-[105%] object-contain object-bottom -mb-8 mt-auto" fetchPriority="high" loading="eager" />
         </div>
         {/* Decorative element */}
         <div className="absolute -bottom-6 -left-6 w-24 h-24 border border-border rounded-full"></div>

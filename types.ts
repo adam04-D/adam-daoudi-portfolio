@@ -10,11 +10,15 @@ export interface Project {
   title: string;
   date: string;
   desc: string;
+  longDesc?: string;
   image?: string;
   video?: string;
   tags: string[];
   link?: string;
   github?: string;
+  architecture?: string[];
+  challenges?: string[];
+  status?: 'Deployed' | 'Beta' | 'Research';
 }
 
 export interface ExperienceItem {
@@ -33,6 +37,7 @@ export interface EducationItem {
   degree: string;
   period: string;
   description: string;
+  logo?: string;
 }
 
 export interface SkillCategory {
@@ -43,15 +48,6 @@ export interface SkillCategory {
 export interface Certification {
   title: string;
   issuer: string;
-}
-
-export interface JournalArticle {
-  id: number;
-  title: string;
-  date: string;
-  excerpt: string;
-  image: string;
-  content: React.ReactNode; 
 }
 
 export interface ChatMessage {

@@ -4,10 +4,10 @@
 */
 
 import React from 'react';
-import { Project, ExperienceItem, EducationItem, SkillCategory, Certification, JournalArticle } from './types';
+import { Project, ExperienceItem, EducationItem, SkillCategory, Certification } from './types';
 
 export const BRAND_NAME = 'Adam Daoudi';
-export const ROLE = 'Data Science & Engineering';
+export const ROLE = 'Data Scientist';
 export const EMAIL = 'adamdaoudi04@gmail.com';
 export const SOCIAL_LINKS = {
   linkedin: 'https://www.linkedin.com/in/adam-daoudi-27bb92256/',
@@ -19,10 +19,10 @@ export const ABOUT_ME = {
   title: 'Designed for impact.',
   paragraphs: [
     'I am a 2nd year Data Science Engineering student at INSEA Rabat. I believe that behind every complex dataset lies a quiet, elegant truth waiting to be uncovered.',
-    'My specialization lies in Deep Learning and Statistical Modeling. I strip away the noise, combining theoretical knowledge with hands-on experience to build intelligent systems that make a real impact.',
-    'Proficient in Machine Learning and Data Engineering, with strong skills in Python and SQL. Driven by curiosity and a desire to continuously learn in the ever-evolving field of Data Science.'
+    'My expertise lies in Machine Learning, Deep Learning, and Reinforcement Learning. I strip away the noise, combining theoretical knowledge with hands-on experience to build intelligent systems that solve real-world problems.',
+    'Proficient in building end-to-end AI solutions and Data Engineering pipelines. Driven by curiosity and a desire to continuously push the boundaries of what is possible with data.'
   ],
-  currentFocus: 'Currently seeking PFA internship opportunities in Deep Learning'
+  currentFocus: 'Currently seeking Data Science internship opportunities'
 };
 
 export const PROJECTS: Project[] = [
@@ -31,51 +31,89 @@ export const PROJECTS: Project[] = [
     title: 'Greenflow Rabat',
     date: '2026',
     desc: 'Deep learning object detection system for urban traffic analysis. Identifies and tracks vehicles using bounding boxes to optimize traffic flow.',
+    longDesc: 'Greenflow Rabat is an advanced traffic management solution designed for the evolving urban landscape of Rabat. By leveraging state-of-the-art computer vision, the system provides real-time vehicle counting and classification to help urban planners reduce congestion and improve road safety.',
     video: 'https://videos.pexels.com/video-files/854745/854745-hd_1920_1080_30fps.mp4',
-    tags: ['Computer Vision', 'YOLO', 'Deep Learning', 'Python']
+    tags: ['Computer Vision', 'YOLO', 'Deep Learning', 'Python'],
+    architecture: [
+      'YOLOv8 for high-speed object detection',
+      'ByteTrack for robust vehicle tracking across frames',
+      'Custom filtering logic for specific traffic lanes',
+      'OpenCV for real-time visualization'
+    ],
+    challenges: [
+      'Optimizing inference speed for real-time processing on edge devices',
+      'Handling occlusions in high-density traffic scenarios',
+      'Adapting to varying lighting and weather conditions in urban environments'
+    ],
+    status: 'Beta'
   },
   {
     id: 'spi-ndvi',
     title: 'SPI-NDVI Forecasting',
     date: 'Dec 2025',
     desc: 'Time series forecasting for vegetation index prediction using satellite-derived data to monitor drought conditions.',
+    longDesc: 'This project utilizes multi-source satellite data to forecast the Normalized Difference Vegetation Index (NDVI) based on the Standardized Precipitation Index (SPI). It provides early warning signs for drought, enabling proactive agricultural management.',
     image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000',
-    tags: ['TensorFlow', 'Keras', 'GeoPandas']
+    tags: ['TensorFlow', 'Keras', 'GeoPandas'],
+    architecture: [
+      'LSTM & GRU layers for sequential data modeling',
+      'Google Earth Engine for large-scale data extraction',
+      'Xarray for multidimensional climate data processing',
+      'Matplotlib/Seaborn for spatiotemporal analysis'
+    ],
+    challenges: [
+      'Aligning different spatial and temporal resolutions from various datasets',
+      'Managing missing data in satellite observations due to cloud cover',
+      'Capturing long-term dependencies in climate patterns'
+    ],
+    status: 'Research'
   },
   {
     id: 'omnisentinel',
     title: 'OmniSentinel',
     date: 'Dec 2025',
     desc: 'Intelligent AI audit system and chatbot for banking information retrieval, built with cloud-first architecture.',
+    longDesc: 'OmniSentinel is a RAG (Retrieval-Augmented Generation) based system designed to streamline banking audits. It allows auditors to query vast amounts of internal documentation through a natural language interface, ensuring compliance and speed.',
     image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1000',
-    tags: ['NLP', 'Hugging Face', 'n8n', 'REST API']
+    tags: ['NLP', 'Hugging Face', 'n8n', 'REST API'],
+    architecture: [
+      'LangChain for RAG pipeline orchestration',
+      'Pinecone vector database for efficient document retrieval',
+      'Mistral-7B for high-quality response generation',
+      'n8n for automated workflow integration'
+    ],
+    challenges: [
+      'Ensuring data privacy and security for sensitive banking information',
+      'Minimizing hallucinations in AI-generated compliance reports',
+      'Scaling the system to handle thousands of complex documents'
+    ],
+    status: 'Beta'
   },
   {
     id: 'sardia-me',
     title: 'Sardia.me',
     date: '2025',
     desc: 'A personal literary archive and platform for creative writing, poetry, and philosophical essays.',
-    image: '/sardia_img.png',
+    longDesc: 'Sardia.me is a digital sanctuary for literature and thought. It serves as a personal archive where I explore the intersection of technology, philosophy, and creative expression through long-form essays and poetry.',
+    image: '/sardia_img.webp',
     tags: ['Literature', 'Creative Writing', 'Philosophy', 'Web Design'],
-    link: 'https://sardia.me/'
+    link: 'https://sardia.me/',
+    architecture: [
+      'Modern React architecture for seamless navigation',
+      'Custom markdown parser for expressive literary layouts',
+      'Responsive typography-focused design',
+      'Framer Motion for subtle, organic animations'
+    ],
+    challenges: [
+      'Designing a layout that prioritizes readability and focus',
+      'Balancing aesthetic minimalism with functional archiving features',
+      'Creating a unique "literary" atmosphere in a digital medium'
+    ],
+    status: 'Deployed'
   }
 ];
 
-export const EXPERIENCES: ExperienceItem[] = [
-  {
-    id: 'goc4-leader',
-    role: 'Secretary General & Sponsoring Lead',
-    company: 'Game of Codes 4 (INSEA)',
-    location: 'Rabat',
-    period: '2025 - 2026',
-    description: [
-      'Contributed to the organization and sponsorship of "Game of Codes," a premier national programming event.',
-      'Coordinated internal teams and led sponsor promotion, contributing to a record-breaking edition with significantly increased media impact and attendance.',
-      'Managed high-level stakeholder relations and secured strategic partnerships to scale the event\'s footprint.'
-    ],
-    tags: ['Leadership', 'Sponsorship', 'Event Management', 'Public Relations'],
-    image: '/goc4.jpg'
-  },
+export const PROFESSIONAL_EXPERIENCES: ExperienceItem[] = [
   {
     id: 'pda-intern',
     role: 'Data Science Intern',
@@ -89,7 +127,25 @@ export const EXPERIENCES: ExperienceItem[] = [
       'Designed interactive data visualizations and dashboards for stakeholder presentations.'
     ],
     tags: ['Python', 'Machine Learning', 'QGIS', 'Pandas', 'Scikit-Learn'],
-    image: '/stage.jpeg'
+    image: '/stage.webp'
+  }
+];
+
+export const EXTRACURRICULAR_ACTIVITIES: ExperienceItem[] = [
+  {
+    id: 'goc4-leader',
+    role: 'Secretary General & Head of Sponsoring Cellule',
+    company: 'INSEA Innovation Edge',
+    location: 'Rabat',
+    period: '2025 - 2026',
+    description: [
+      'Leading the organizational efforts for "Game of Codes 4," a premier national programming event at INSEA.',
+      'Coordinating internal teams and administrative operations as Secretary General to ensure high-quality execution.',
+      'Spearheading sponsoring and partnerships, contributing to a record-breaking edition with significantly increased media impact.',
+      'Managing high-level stakeholder relations and securing strategic partnerships to scale the event\'s footprint.'
+    ],
+    tags: ['Leadership', 'Event Management', 'Sponsorship', 'Public Relations'],
+    image: '/goc4.webp'
   }
 ];
 
@@ -99,14 +155,16 @@ export const EDUCATION: EducationItem[] = [
     school: 'INSEA Rabat',
     degree: 'Data Science Engineering',
     period: '2024 - 2027',
-    description: 'Currently in 2nd year, focusing on advanced machine learning techniques, statistical analysis, and data-driven decision making.'
+    description: 'Currently in 2nd year, focusing on advanced machine learning techniques, statistical analysis, and data-driven decision making.',
+    logo: '/insea.webp'
   },
   {
     id: 'cpge',
     school: 'CPGE Ibn Abdoun',
     degree: 'Preparatory Classes - MPSI/MP',
     period: '2022 - 2024',
-    description: 'Intensive program in Mathematics, Physics, and Engineering Sciences. Built strong foundations in analytical thinking and problem-solving.'
+    description: 'Intensive program in Mathematics, Physics, and Engineering Sciences. Built strong foundations in analytical thinking and problem-solving.',
+    logo: '/logocpge.webp'
   }
 ];
 
@@ -135,20 +193,3 @@ export const CERTIFICATIONS: Certification[] = [
   { title: 'Advanced Deep Learning with Keras', issuer: 'DataCamp' }
 ];
 
-export const JOURNAL_ARTICLES: JournalArticle[] = [
-    {
-        id: 1,
-        title: "The Geometry of Data",
-        date: "April 12, 2026",
-        excerpt: "Why the search for intelligence in machines mirrors our search for meaning in noise.",
-        image: "https://images.unsplash.com/photo-1617791160505-6f00504e3519?auto=format&fit=crop&q=80&w=1000",
-        content: React.createElement(React.Fragment, null,
-            React.createElement("p", { className: "mb-6 first-letter:text-5xl first-letter:font-serif first-letter:mr-3 first-letter:float-left text-text-muted" },
-                "We live in a world of high-dimensional noise. Every signal, every pixel, every sensor reading is a point in a vast, dark space. To find intelligence is to find the manifold—the quiet shape hidden within the static."
-            ),
-            React.createElement("p", { className: "mb-8 text-text-muted" },
-                "Data is not just numbers; it is a footprint of reality. When we train neural networks, we are essentially teaching machines to see the invisible structure of our world."
-            )
-        )
-    }
-];
