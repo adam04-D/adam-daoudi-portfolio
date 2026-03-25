@@ -141,7 +141,6 @@ function App() {
       
       {/* macOS Components */}
       <Spotlight isOpen={isSpotlightOpen} onClose={() => setIsSpotlightOpen(false)} onNavigate={scrollToSection} />
-      <MacOSNotification />
     </div>
   );
 }
