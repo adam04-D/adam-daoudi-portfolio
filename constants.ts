@@ -32,7 +32,8 @@ export const PROJECTS: Project[] = [
     date: '2026',
     desc: 'Deep learning object detection system for urban traffic analysis. Identifies and tracks vehicles using bounding boxes to optimize traffic flow.',
     longDesc: 'Greenflow Rabat is an advanced traffic management solution designed for the evolving urban landscape of Rabat. By leveraging state-of-the-art computer vision, the system provides real-time vehicle counting and classification to help urban planners reduce congestion and improve road safety.',
-    video: 'https://videos.pexels.com/video-files/854745/854745-hd_1920_1080_30fps.mp4',
+    image: '/cover-cars.webp',
+    github: 'https://github.com/adam04-D/Green-Flow-Rabat-.git',
     tags: ['Computer Vision', 'YOLO', 'Deep Learning', 'Python'],
     architecture: [
       'YOLOv8 for high-speed object detection',
@@ -54,6 +55,7 @@ export const PROJECTS: Project[] = [
     desc: 'Time series forecasting for vegetation index prediction using satellite-derived data to monitor drought conditions.',
     longDesc: 'This project utilizes multi-source satellite data to forecast the Normalized Difference Vegetation Index (NDVI) based on the Standardized Precipitation Index (SPI). It provides early warning signs for drought, enabling proactive agricultural management.',
     image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=1000',
+    github: 'https://github.com/adam04-D/Drought-monitoring.git',
     tags: ['TensorFlow', 'Keras', 'GeoPandas'],
     architecture: [
       'LSTM & GRU layers for sequential data modeling',
@@ -188,8 +190,20 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 ];
 
 export const CERTIFICATIONS: Certification[] = [
-  { title: 'Fundamentals of Deep Learning', issuer: 'NVIDIA' },
-  { title: 'Deep Learning in Python', issuer: 'DataCamp' },
-  { title: 'Advanced Deep Learning with Keras', issuer: 'DataCamp' }
+  { 
+    title: 'Fundamentals of Deep Learning', 
+    issuer: 'NVIDIA', 
+    logo: '/Nvidia_logo.svg.webp' 
+  },
+  { 
+    title: 'Deep Learning in Python', 
+    issuer: 'DataCamp', 
+    logo: '/datacamp.webp' 
+  },
+  { 
+    title: 'Advanced Deep Learning with Keras', 
+    issuer: 'DataCamp', 
+    logo: '/datacamp.webp' 
+  }
 ];
 

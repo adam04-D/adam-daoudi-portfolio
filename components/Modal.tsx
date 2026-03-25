@@ -25,7 +25,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title = "Preview", child
   const modalContent = (
     <AnimatePresence mode="wait">
       {isOpen && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center p-4 md:p-8">
+        <div 
+          className="fixed inset-0 z-[999] flex items-center justify-center p-4 md:p-8"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
+        >
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -35,6 +40,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title = "Preview", child
           />
           
           <motion.div 
+            id="modal-content"
             initial={{ 
               opacity: 0, 
               scale: 0.8,
@@ -69,23 +75,24 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title = "Preview", child
               damping: 28, 
               stiffness: 250 
             }}
-            className="relative w-full max-w-5xl max-h-[90vh] bg-primary rounded-2xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.4)] border border-border flex flex-col origin-bottom"
+            className="relative w-full max-w-5xl max-h-[90vh] bg-primary rounded-2xl overflow-hidden shadow-[0_30px_100px_rgba(0,0,0,0.4)] border border-border flex flex-col origin-bottom focus:outline-none"
+            tabIndex={-1}
           >
             {/* macOS Window Header */}
             <div className="h-12 bg-secondary/80 backdrop-blur-md flex items-center px-6 gap-2 border-b border-border shrink-0">
               <div className="flex gap-2">
-                <div 
+                <button 
                   onClick={onClose} 
                   className="w-3 h-3 rounded-full bg-[#FF5F56] border border-[#E0443E] cursor-pointer hover:brightness-90 transition-all shadow-inner"
+                  aria-label="Close modal"
                 />
                 <div 
-                  onClick={onClose}
-                  className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123] cursor-pointer hover:brightness-90 transition-all shadow-inner"
+                  className="w-3 h-3 rounded-full bg-[#FFBD2E] border border-[#DEA123] cursor-not-allowed opacity-50 shadow-inner"
                 />
                 <div className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]" />
               </div>
               <div className="flex-1 text-center pr-16">
-                <span className="text-[10px] font-extrabold text-text-muted/40 tracking-[0.2em] uppercase">{title}</span>
+                <span id="modal-title" className="text-[10px] font-extrabold text-text-muted/40 tracking-[0.2em] uppercase">{title}</span>
               </div>
             </div>
 

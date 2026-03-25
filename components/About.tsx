@@ -49,28 +49,46 @@ const About: React.FC = () => {
             ))}
           </div>
 
-          {/* Current Focus with High-Visibility HR Badge */}
+          {/* macOS System Status Widget */}
           <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 1, type: "spring" }}
-            className="pt-12 flex justify-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.8, type: "spring" }}
+            className="pt-16 flex justify-center"
           >
-            <div className="relative group">
-              {/* Pulsing Background Effect */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-text-main/20 to-text-main/5 rounded-full blur opacity-40 group-hover:opacity-75 transition duration-1000 group-hover:duration-200 animate-pulse"></div>
+            <div className="relative group cursor-default">
+              {/* Dynamic Aura */}
+              <div className="absolute -inset-4 bg-text-main/5 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               
-              <div className="relative flex items-center gap-3 px-6 py-3 bg-primary border border-text-main/20 rounded-full shadow-xl overflow-hidden">
-                <span className="relative flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                </span>
+              {/* macOS Control Center Style Pill */}
+              <div className="relative flex items-center gap-4 px-8 py-4 bg-primary/40 backdrop-blur-3xl border border-white/20 dark:border-white/5 rounded-full shadow-[0_10px_40px_rgba(0,0,0,0.08)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.3)] transition-all duration-500 group-hover:shadow-[0_15px_50px_rgba(0,0,0,0.12)] group-hover:-translate-y-1">
                 
-                <span className="text-sm font-semibold tracking-wide text-text-main">
-                  {ABOUT_ME.currentFocus}
-                </span>
+                {/* Refined Pulsing Status Indicator */}
+                <div className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-40"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500 shadow-[0_0_10px_rgba(34,197,94,0.5)]"></span>
+                </div>
                 
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-text-main/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                {/* Text Content */}
+                <div className="flex flex-col items-start">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-text-muted/50 leading-none mb-1">Current Status</span>
+                  <span className="text-sm md:text-base font-bold tracking-tight text-text-main">
+                    {ABOUT_ME.currentFocus}
+                  </span>
+                </div>
+
+                {/* macOS Style Interactive Icon */}
+                <div className="ml-4 pl-4 border-l border-border/50">
+                   <div className="w-8 h-8 rounded-full bg-text-main/5 flex items-center justify-center group-hover:bg-text-main group-hover:text-primary transition-all duration-500">
+                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="transform group-hover:translate-x-0.5 transition-transform">
+                        <path d="M4 2L8 6L4 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                   </div>
+                </div>
+
+                {/* Shimmer Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none" />
               </div>
             </div>
           </motion.div>

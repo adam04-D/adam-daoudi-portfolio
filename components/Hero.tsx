@@ -20,11 +20,19 @@ const Hero: React.FC = () => {
           {BRAND_NAME}.
         </h1>
         <p className="text-lg text-text-muted max-w-md leading-relaxed">
-          Transforming complex data into elegant, actionable insights through deep learning and statistical modeling.
+          Mastering the full spectrum of Data Science to translate complex datasets into elegant, high-impact intelligence. My work bridges the gap between foundational statistical rigor and the cutting edge of Artificial Intelligence.
         </p>
-        <div className="pt-4 flex items-center space-x-6">
+        <div className="pt-4 flex flex-wrap items-center gap-6">
           <a href="#projects" className="inline-block bg-btn-bg text-btn-text px-8 py-4 text-sm font-medium tracking-wide hover:bg-btn-hover transition-colors">
             View Projects
+          </a>
+          <a 
+            href="/resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block border border-border text-text-main px-8 py-4 text-sm font-medium tracking-wide hover:bg-secondary transition-colors"
+          >
+            Download Resume
           </a>
           <div className="flex space-x-4">
             <a href={SOCIAL_LINKS.linkedin} target="_blank" rel="noopener noreferrer" className="text-text-muted hover:text-text-main transition-colors" title="LinkedIn">

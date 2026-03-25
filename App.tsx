@@ -12,9 +12,11 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
 import Skills from './components/Skills';
+import Freelance from './components/Freelance';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Spotlight from './components/Spotlight';
+import MacOSNotification from './components/MacOSNotification';
 import { PROJECTS, PROFESSIONAL_EXPERIENCES, EXTRACURRICULAR_ACTIVITIES } from './constants';
 
 function App() {
@@ -131,6 +133,7 @@ function App() {
         <Experience />
         <Education />
         <Skills />
+        <Freelance />
         <Contact />
       </motion.main>
       
@@ -138,6 +141,7 @@ function App() {
       
       {/* macOS Components */}
       <Spotlight isOpen={isSpotlightOpen} onClose={() => setIsSpotlightOpen(false)} onNavigate={scrollToSection} />
+      <MacOSNotification />
     </div>
   );
 }

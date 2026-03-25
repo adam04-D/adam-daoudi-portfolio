@@ -33,11 +33,12 @@ const Projects: React.FC = () => {
             transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.2, 1, 0.3, 1] }}
             className="flex flex-col"
           >
-            <div 
+            <button 
               onClick={() => setSelectedProject(project)}
-              className="group flex flex-col h-full cursor-pointer"
+              className="group flex flex-col h-full cursor-pointer text-left bg-transparent border-none p-0 outline-none focus-visible:ring-2 focus-visible:ring-text-main rounded-sm transition-shadow"
+              aria-label={`View details for ${project.title}`}
             >
-              <div className="aspect-[4/5] bg-secondary overflow-hidden mb-6 relative rounded-sm border border-border flex items-center justify-center">
+              <div className="aspect-[4/5] bg-secondary overflow-hidden mb-6 relative rounded-sm border border-border flex items-center justify-center w-full">
                 {project.video ? (
                   <video 
                     autoPlay 
@@ -51,7 +52,7 @@ const Projects: React.FC = () => {
                 ) : project.image ? (
                   <img 
                     src={project.image} 
-                    alt={project.title}
+                    alt="" 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     referrerPolicy="no-referrer"
                   />
@@ -89,7 +90,7 @@ const Projects: React.FC = () => {
                   </span>
                 ))}
               </div>
-            </div>
+            </button>
           </motion.div>
         ))}
       </div>

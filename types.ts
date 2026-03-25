@@ -48,6 +48,7 @@ export interface SkillCategory {
 export interface Certification {
   title: string;
   issuer: string;
+  logo?: string;
 }
 
 export interface ChatMessage {

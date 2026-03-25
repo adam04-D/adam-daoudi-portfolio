@@ -53,7 +53,7 @@ const Experience: React.FC = () => {
             transition={{ duration: 0.5, ease: [0.2, 1, 0.3, 1] }}
             className="space-y-12"
           >
-            {experiences.map((exp, idx) => (
+            {experiences.map((exp) => (
               <div 
                 key={exp.id} 
                 className="group relative bg-secondary/20 rounded-2xl p-8 md:p-12 border border-transparent hover:border-border hover:bg-secondary/30 transition-all duration-500"

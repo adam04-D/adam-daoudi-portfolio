@@ -102,8 +102,12 @@ const Skills: React.FC = () => {
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-4 p-4 rounded-2xl hover:bg-primary/50 transition-colors group"
               >
-                <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-text-muted group-hover:text-text-main border border-border/30 transition-all">
-                  <span className="text-xs font-bold">{idx + 1}</span>
+                <div className="w-10 h-10 rounded-xl bg-secondary flex items-center justify-center text-text-muted group-hover:text-text-main border border-border/30 transition-all overflow-hidden p-1.5">
+                  {cert.logo ? (
+                    <img src={cert.logo} alt={cert.issuer} className="w-full h-full object-contain" />
+                  ) : (
+                    <span className="text-xs font-bold">{idx + 1}</span>
+                  )}
                 </div>
                 <div>
                   <h4 className="text-sm font-medium text-text-main">{cert.title}</h4>

@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, AnimatePresence } from 'framer-motion';
+import React, { useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring, useTransform, AnimatePresence, MotionValue } from 'framer-motion';
 import { User, Briefcase, GraduationCap, Wrench, Mail, Code, Search } from 'lucide-react';
 
 interface DockProps {
@@ -26,14 +26,14 @@ const Dock: React.FC<DockProps> = ({ onNavClick, openSpotlight }) => {
         onMouseLeave={() => mouseX.set(Infinity)}
         className="flex items-end h-20 gap-4 px-6 pb-4 bg-secondary/80 dark:bg-[#141417]/80 backdrop-blur-2xl border border-border/50 rounded-[2rem] shadow-2xl"
       >
-        <DockItem onClick={openSpotlight} icon={Search} label="Spotlight (⌘K)" mouseX={mouseX} />
+        <DockItem onClick={() => openSpotlight()} icon={Search} label="Spotlight (⌘K)" mouseX={mouseX} />
         
         <div className="w-px h-10 bg-text-main/10 mx-3 self-center"></div>
 
         {items.map((item) => (
           <DockItem 
             key={item.id} 
-            onClick={(e) => onNavClick(e as any, item.id)} 
+            onClick={(e) => onNavClick(e as React.MouseEvent<HTMLAnchorElement>, item.id)} 
             icon={item.icon} 
             label={item.label} 
             mouseX={mouseX} 
@@ -48,8 +48,8 @@ const Dock: React.FC<DockProps> = ({ onNavClick, openSpotlight }) => {
 interface DockItemProps {
   icon: React.ElementType;
   label: string;
-  mouseX: any;
-  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  mouseX: MotionValue<number>;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => void;
   href?: string;
 }
 
@@ -89,7 +89,11 @@ const DockItem: React.FC<DockItemProps> = ({ icon: Icon, label, mouseX, onClick,
         style={{ scale }}
         className="w-14 h-14 origin-bottom bg-primary rounded-2xl flex items-center justify-center border border-border/30 shadow-sm cursor-pointer hover:bg-secondary transition-colors"
       >
-        <Comp href={href} onClick={onClick as any} className="w-full h-full flex items-center justify-center text-text-muted hover:text-text-main">
+        <Comp 
+          href={href} 
+          onClick={onClick as any} 
+          className="w-full h-full flex items-center justify-center text-text-muted hover:text-text-main"
+        >
           <Icon size={22} strokeWidth={1.5} />
         </Comp>
       </motion.div>

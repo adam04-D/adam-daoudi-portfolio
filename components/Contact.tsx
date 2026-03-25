@@ -29,7 +29,7 @@ const Contact: React.FC = () => {
           </h2>
           
           <p className="text-xl text-text-muted max-w-2xl mx-auto leading-relaxed font-light">
-            I'm currently seeking a <span className="text-text-main font-medium">Data Science internship</span> where I can apply my expertise in Machine Learning, Deep Learning, and Reinforcement Learning to solve high-impact challenges.
+            As a dedicated advocate for the AI community with a relentless passion for data-driven innovation, I am seeking a <span className="text-text-main font-medium">Data Science internship</span>. I am ready to apply my holistic expertise—spanning the entire Data Science lifecycle, Machine Learning, and Reinforcement Learning—to architect solutions for high-impact challenges.
           </p>
           
           <div className="pt-12 flex flex-col items-center gap-8">
